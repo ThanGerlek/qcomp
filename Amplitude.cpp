@@ -2,6 +2,8 @@
 #define AMPLITUDE_CPP_QCOMP_12_2_2022_21_55
 
 #include <cmath>
+#include <sstream>
+#include <iomanip>
 #include "Amplitude.h"
 
 Amplitude::Amplitude(double re, double im)
@@ -31,8 +33,10 @@ Amplitude Amplitude::mult(Amplitude a, Amplitude b)
 
 std::string Amplitude::toString() const
 {
-    std::string str = std::to_string(this->re) + "+" + std::to_string(this->im) + "i";
-    return str;
+    std::stringstream ss;
+    ss << std::setprecision(3) << std::fixed;
+    ss << re << "+" << im << "i";
+    return ss.str();
 }
 
 void Amplitude::scale(double d)
