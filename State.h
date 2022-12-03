@@ -1,4 +1,5 @@
-#pragma once
+#ifndef STATE_H_QCOMP_12_2_2022_21_55
+#define STATE_H_QCOMP_12_2_2022_21_55
 
 #include "Amplitude.h"
 
@@ -18,3 +19,5 @@ private:
     Amplitude *matrix[SIZE][SIZE];
     void initMatrix();
 };
+
+#endif

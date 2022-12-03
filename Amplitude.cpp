@@ -1,4 +1,5 @@
-#pragma once
+#ifndef AMPLITUDE_CPP_QCOMP_12_2_2022_21_55
+#define AMPLITUDE_CPP_QCOMP_12_2_2022_21_55
 
 #include <cmath>
 #include "Amplitude.h"
@@ -67,3 +68,5 @@ double Amplitude::getIm() const
 {
     return this->im;
 }
+
+#endif

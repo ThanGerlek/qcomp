@@ -1,4 +1,5 @@
-#pragma once
+#ifndef STATE_CPP_QCOMP_12_2_2022_21_55
+#define STATE_CPP_QCOMP_12_2_2022_21_55
 
 #include "State.h"
 
@@ -50,3 +51,5 @@ void State::normalize()
         }
     }
 }
+
+#endif

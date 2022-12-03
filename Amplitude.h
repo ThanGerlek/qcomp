@@ -1,4 +1,5 @@
-#pragma once
+#ifndef AMPLITUDE_H_QCOMP_12_2_2022_21_58
+#define AMPLITUDE_H_QCOMP_12_2_2022_21_58
 
 #include <string>
 
@@ -22,3 +23,5 @@ private:
     double re;
     double im;
 };
+
+#endif
