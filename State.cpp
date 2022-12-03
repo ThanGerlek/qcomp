@@ -1,12 +1,13 @@
 #ifndef STATE_CPP_QCOMP_12_2_2022_21_55
 #define STATE_CPP_QCOMP_12_2_2022_21_55
 
+#include <cmath>
+#include <sstream>
 #include "State.h"
 
 State::State()
 {
-    //
-    initMatrix();
+    initStateVector();
 }
 
 State::~State()
@@ -14,42 +15,45 @@ State::~State()
     //
 }
 
-void State::initMatrix()
+void State::initStateVector()
 {
     for (int i = 0; i < SIZE; ++i)
     {
-        for (int j = 0; j < SIZE; ++j)
-        {
-            this->matrix[i][j] = new Amplitude();
-        }
+        this->stateVector[i] = Amplitude();
     }
 }
 
 std::string State::toString()
 {
-    //
+    std::stringstream ss;
+    ss << "[ ";
+    for (int i = 0; i < SIZE; ++i)
+    {
+        ss << stateVector[i].toString() << " ";
+    }
+    ss << "]" << std::endl;
+    return ss.str();
 }
 
 void State::normalize()
 {
-    double avg = 0;
+    double sum = 0;
     for (int i = 0; i < SIZE; ++i)
     {
-        for (int j = 0; j < SIZE; j++)
-        {
-            avg += matrix[i][j]->norm();
-        }
+        sum += stateVector[i].normSq();
     }
 
-    avg /= SIZE * SIZE;
+    sum = std::sqrt(sum);
 
     for (int i = 0; i < SIZE; ++i)
     {
-        for (int j = 0; j < SIZE; j++)
-        {
-            matrix[i][j]->scaleD(avg);
-        }
+        stateVector[i].scaleD(sum);
     }
+}
+
+void State::set(int i, Amplitude val)
+{
+    stateVector[i] = val;
 }
 
 #endif

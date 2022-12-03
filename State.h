@@ -14,10 +14,11 @@ public:
     ~State();
     std::string toString();
     void normalize();
+    void set(int i, Amplitude val);
 
 private:
-    Amplitude *matrix[SIZE][SIZE];
-    void initMatrix();
+    Amplitude stateVector[SIZE];
+    void initStateVector();
 };
 
 #endif
