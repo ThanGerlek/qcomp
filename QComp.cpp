@@ -3,8 +3,6 @@
 
 #include "QComp.h"
 
-#define SIZE
-
 QComp::QComp()
 {
     //

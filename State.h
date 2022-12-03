@@ -4,7 +4,7 @@
 #include "Amplitude.h"
 
 #ifndef SIZE
-#define SIZE 8
+#define SIZE 4
 #endif
 
 class State
