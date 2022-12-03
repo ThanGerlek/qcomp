@@ -17,7 +17,8 @@ State::~State()
 
 void State::initStateVector()
 {
-    for (int i = 0; i < SIZE; ++i)
+    this->stateVector[0] = Amplitude(1,0);
+    for (int i = 1; i < SIZE; ++i)
     {
         this->stateVector[i] = Amplitude();
     }
