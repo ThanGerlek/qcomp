@@ -35,7 +35,18 @@ std::string Amplitude::toString() const
 {
     std::stringstream ss;
     ss << std::setprecision(3) << std::fixed;
-    ss << re << "+" << im << "i";
+    if (this->im == 0)
+    {
+        ss << re;
+    }
+    else if (this->re == 0)
+    {
+        ss << im << "i";
+    }
+    else
+    {
+        ss << re << "+" << im << "i";
+    }
     return ss.str();
 }
 
