@@ -30,4 +30,19 @@ Gate::~Gate()
     //
 }
 
+void Gate::applyGate(State *state) const
+{
+    // ultra-naive method: O(n^2), out-of-place
+    Amplitude newSVector[SIZE];
+    for (int i = 0; i < SIZE; ++i)
+    {
+        for (int j = 0; j < SIZE; ++j)
+        {
+            Amplitude product = Amplitude::mult2(state->get(j), this->matrix[i][j]);
+            newSVector[i].add(product);
+        }
+    }
+    state->setStateVector(newSVector);
+}
+
 #endif

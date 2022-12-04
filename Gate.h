@@ -9,6 +9,7 @@ public:
     Gate();
     Gate(Amplitude matrix[SIZE][SIZE]);
     ~Gate();
+    void applyGate(State *state) const;
 
 private:
     Amplitude matrix[SIZE][SIZE];
