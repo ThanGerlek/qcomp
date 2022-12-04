@@ -14,13 +14,15 @@ QComp::~QComp()
     delete this->state;
 }
 
-void QComp::apply(Gate *gate)
+void QComp::apply(Gate *gate, int *targets)
 {
-    gate->applyGate(this->state);
+    gate->applyGate(this->state, targets);
 }
 
-bool QComp::measure(int q) {
+bool QComp::measure(int q)
+{
     // TODO
+    return false;
 }
 
 void QComp::printState()

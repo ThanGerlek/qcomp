@@ -10,7 +10,7 @@ public:
     QComp();
     ~QComp();
     void clear();
-    void apply(Gate *gate);
+    void apply(Gate *gate, int *targets);
     bool measure(int q);
     void printState();
 
