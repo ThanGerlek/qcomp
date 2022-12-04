@@ -1,5 +1,5 @@
-#ifndef GATE_CPP_QCOMP_12_2_2022_21_55
-#define GATE_CPP_QCOMP_12_2_2022_21_55
+#ifndef GENGATE_CPP_QCOMP_12_3_2022_17_43
+#define GENGATE_CPP_QCOMP_12_3_2022_17_43
 
 #include "GenGate.h"
 
