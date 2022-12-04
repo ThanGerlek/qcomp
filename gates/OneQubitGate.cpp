@@ -32,7 +32,28 @@ void OneQubitGate::applyGate(State *state, int *targets) const
 
 void OneQubitGate::applyGate(State *state, int target) const
 {
-    // TODO
+    // TODO test applyGate()
+    // Swap target qubit to index 0
+    Amplitude targetAmplitude = state->get(target);
+    state->set(target, state->get(0));
+    state->set(0, targetAmplitude);
+
+    // ultra-naive method: O(n^2), out-of-place
+    Amplitude newSVector[SIZE];
+    for (int i = 0; i < SIZE; ++i)
+    {
+        for (int j = 0; j < SIZE; ++j)
+        {
+            Amplitude product = Amplitude::mult2(state->get(j), this->matrix[i][j]);
+            newSVector[i].add(product);
+        }
+    }
+    state->setStateVector(newSVector);
+
+    // Swap target qubit back
+    targetAmplitude = state->get(target);
+    state->set(target, state->get(0));
+    state->set(0, targetAmplitude);
 }
 
 int OneQubitGate::getSize() const

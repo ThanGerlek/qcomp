@@ -12,6 +12,10 @@ public:
     void applyGate(State *state, int *targets) const;
     void applyGate(State *state, int target) const;
     int getSize() const;
+
+private:
+    Amplitude matrix[2][2];
+    Amplitude fullMatrix[SIZE][SIZE];
 };
 
 #endif
