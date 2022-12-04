@@ -20,6 +20,11 @@ Amplitude::Amplitude()
 
 Amplitude::~Amplitude() {}
 
+////
+////
+// Static Operations
+////
+
 Amplitude Amplitude::add(Amplitude a, Amplitude b)
 {
     return Amplitude(a.re + b.re, a.im + b.im);
@@ -61,6 +66,11 @@ void Amplitude::scaleD(double d)
     this->re = this->re / d;
     this->im = this->im / d;
 }
+
+////
+////
+// Const Operations
+////
 
 double Amplitude::normSq() const
 {
