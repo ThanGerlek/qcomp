@@ -9,8 +9,10 @@ public:
     Amplitude(double re, double im);
     Amplitude();
     ~Amplitude();
-    static Amplitude add(Amplitude a, Amplitude b);
-    static Amplitude mult(Amplitude a, Amplitude b);
+    static Amplitude add2(Amplitude a, Amplitude b);
+    static Amplitude mult2(Amplitude a, Amplitude b);
+    void add(Amplitude other);
+    void mult(Amplitude other);
     void scale(double d);
     void scaleD(double d);
     std::string toString() const;
