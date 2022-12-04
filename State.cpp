@@ -4,20 +4,18 @@
 #include <cmath>
 #include <sstream>
 #include "State.h"
+#include "Gate.h"
 
 State::State()
 {
     initStateVector();
 }
 
-State::~State()
-{
-    //
-}
+State::~State() {}
 
 void State::initStateVector()
 {
-    this->stateVector[0] = Amplitude(1,0);
+    this->stateVector[0] = Amplitude(1, 0);
     for (int i = 1; i < SIZE; ++i)
     {
         this->stateVector[i] = Amplitude();
@@ -55,6 +53,19 @@ void State::normalize()
 void State::set(int i, Amplitude val)
 {
     stateVector[i] = val;
+}
+
+Amplitude State::get(int i)
+{
+    return stateVector[i];
+}
+
+void State::setStateVector(Amplitude sVector[SIZE])
+{
+    for (int i = 0; i < SIZE; ++i)
+    {
+        this->stateVector[i] = sVector[i];
+    }
 }
 
 #endif

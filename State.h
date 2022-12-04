@@ -15,6 +15,8 @@ public:
     std::string toString();
     void normalize();
     void set(int i, Amplitude val);
+    Amplitude get(int i);
+    void setStateVector(Amplitude stateVector[SIZE]);
 
 private:
     Amplitude stateVector[SIZE];
