@@ -1,7 +1,7 @@
 #ifndef QCOMP_H_12_2_2022_21_59
 #define QCOMP_H_12_2_2022_21_59
 
-#include "Gate.h"
+#include "gates/Gate.h"
 #include "State.h"
 
 class QComp
