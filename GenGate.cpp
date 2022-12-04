@@ -1,9 +1,9 @@
 #ifndef GATE_CPP_QCOMP_12_2_2022_21_55
 #define GATE_CPP_QCOMP_12_2_2022_21_55
 
-#include "Gate.h"
+#include "GenGate.h"
 
-Gate::Gate()
+GenGate::GenGate()
 {
     for (int i = 0; i < SIZE; ++i)
     {
@@ -14,7 +14,7 @@ Gate::Gate()
     }
 }
 
-Gate::Gate(Amplitude matrix[SIZE][SIZE])
+GenGate::GenGate(Amplitude matrix[SIZE][SIZE])
 {
     for (int i = 0; i < SIZE; ++i)
     {
@@ -25,12 +25,12 @@ Gate::Gate(Amplitude matrix[SIZE][SIZE])
     }
 }
 
-Gate::~Gate()
+GenGate::~GenGate()
 {
     //
 }
 
-void Gate::applyGate(State *state) const
+void GenGate::applyGate(State *state) const
 {
     // ultra-naive method: O(n^2), out-of-place
     Amplitude newSVector[SIZE];
@@ -43,6 +43,10 @@ void Gate::applyGate(State *state) const
         }
     }
     state->setStateVector(newSVector);
+}
+
+int GenGate::getSize() const {
+    return SIZE;
 }
 
 #endif

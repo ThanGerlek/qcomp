@@ -7,12 +7,9 @@ class Gate
 {
 public:
     Gate();
-    Gate(Amplitude matrix[SIZE][SIZE]);
     ~Gate();
-    void applyGate(State *state) const;
-
-private:
-    Amplitude matrix[SIZE][SIZE];
+    virtual void applyGate(State *state) const = 0;
+    virtual int getSize() const = 0;
 };
 
 #endif
