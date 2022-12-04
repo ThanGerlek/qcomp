@@ -6,12 +6,12 @@
 class Gate
 {
 public:
-    void apply(State *state);
     Gate();
+    Gate(Amplitude matrix[SIZE][SIZE]);
     ~Gate();
 
 private:
-    //
+    Amplitude matrix[SIZE][SIZE];
 };
 
 #endif
