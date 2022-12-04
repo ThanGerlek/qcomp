@@ -3,7 +3,25 @@
 
 #include "OneQubitGate.h"
 
-OneQubitGate::OneQubitGate() {}
+OneQubitGate::OneQubitGate()
+{
+    // Default: identity
+    this->matrix[0][0] = Amplitude(1, 0);
+    this->matrix[0][1] = Amplitude(0, 0);
+    this->matrix[1][0] = Amplitude(0, 0);
+    this->matrix[1][1] = Amplitude(1, 0);
+}
+
+OneQubitGate::OneQubitGate(Amplitude matrix[2][2])
+{
+    for (int i = 0; i < 2; i++)
+    {
+        for (int j = 0; j < 2; j++)
+        {
+            this->matrix[i][j] = matrix[i][j];
+        }
+    }
+}
 
 OneQubitGate::~OneQubitGate() {}
 
