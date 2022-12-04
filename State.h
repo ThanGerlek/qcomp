@@ -16,11 +16,11 @@ public:
     void normalize();
     void set(int i, Amplitude val);
     Amplitude get(int i);
+    void initStateVector();
     void setStateVector(Amplitude stateVector[SIZE]);
 
 private:
     Amplitude stateVector[SIZE];
-    void initStateVector();
 };
 
 #endif
