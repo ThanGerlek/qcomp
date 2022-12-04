@@ -9,6 +9,7 @@ public:
     GenGate();
     GenGate(Amplitude matrix[SIZE][SIZE]);
     ~GenGate();
+    void applyGate(State *state, int *targets) const;
     void applyGate(State *state) const;
     int getSize() const;
 

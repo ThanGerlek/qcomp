@@ -8,7 +8,7 @@ class Gate
 public:
     Gate();
     ~Gate();
-    virtual void applyGate(State *state) const = 0;
+    virtual void applyGate(State *state, int *targets) const = 0;
     virtual int getSize() const = 0;
 };
 

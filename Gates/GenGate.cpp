@@ -25,9 +25,11 @@ GenGate::GenGate(Amplitude matrix[SIZE][SIZE])
     }
 }
 
-GenGate::~GenGate()
+GenGate::~GenGate() {}
+
+void GenGate::applyGate(State *state, int *targets) const
 {
-    //
+    applyGate(state);
 }
 
 void GenGate::applyGate(State *state) const
@@ -45,7 +47,8 @@ void GenGate::applyGate(State *state) const
     state->setStateVector(newSVector);
 }
 
-int GenGate::getSize() const {
+int GenGate::getSize() const
+{
     return SIZE;
 }
 
