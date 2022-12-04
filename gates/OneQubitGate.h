@@ -16,6 +16,7 @@ public:
 private:
     Amplitude matrix[2][2];
     Amplitude fullMatrix[SIZE][SIZE];
+    void generateFullMatrix();
 };
 
 #endif

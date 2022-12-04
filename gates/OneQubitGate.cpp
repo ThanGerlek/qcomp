@@ -61,4 +61,24 @@ int OneQubitGate::getSize() const
     return 2;
 }
 
+void OneQubitGate::generateFullMatrix()
+{
+    // Clear fullMatrix
+    for (int i = 0; i < SIZE; i++)
+    {
+        for (int j = 0; j < SIZE; j++)
+        {
+            fullMatrix[i][j] = Amplitude();
+        }
+    }
+
+    // Fill 2x2 diagonals
+    for (int i = 0; i < SIZE; i += 2)
+    {
+        fullMatrix[i + 0][i + 0] = matrix[0][0];
+        fullMatrix[i + 0][i + 1] = matrix[0][1];
+        fullMatrix[i + 1][i + 0] = matrix[1][0];
+        fullMatrix[i + 1][i + 1] = matrix[1][1];
+    }
+}
 #endif
