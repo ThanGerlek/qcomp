@@ -28,6 +28,10 @@ OneQubitGate::OneQubitGate(Amplitude matrix[2][2])
 
 OneQubitGate::~OneQubitGate() {}
 
+void OneQubitGate::applyGate(State *state) const
+{
+    applyGate(state, 0);
+}
 void OneQubitGate::applyGate(State *state, int *targets) const
 {
     applyGate(state, targets[0]);
@@ -36,6 +40,7 @@ void OneQubitGate::applyGate(State *state, int *targets) const
 void OneQubitGate::applyGate(State *state, int target) const
 {
     // TODO test applyGate()
+    // FIXME
     // Swap target qubit to index 0
     Amplitude targetAmplitude = state->get(target);
     state->set(target, state->get(0));

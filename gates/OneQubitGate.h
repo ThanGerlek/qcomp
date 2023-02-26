@@ -11,6 +11,7 @@ public:
     ~OneQubitGate();
     void applyGate(State *state, int *targets) const;
     void applyGate(State *state, int target) const;
+    void applyGate(State *state) const;
     int getSize() const;
     void printMatrix() const;
 
