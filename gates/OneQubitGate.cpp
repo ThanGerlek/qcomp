@@ -1,6 +1,9 @@
 #ifndef H_GATE_CPP_QCOMP_12_3_2022_17_55
 #define H_GATE_CPP_QCOMP_12_3_2022_17_55
 
+#include <sstream>
+#include <iostream>
+#include <iomanip>
 #include "OneQubitGate.h"
 
 OneQubitGate::OneQubitGate()
@@ -80,5 +83,22 @@ void OneQubitGate::generateFullMatrix()
         fullMatrix[i + 1][i + 0] = matrix[1][0];
         fullMatrix[i + 1][i + 1] = matrix[1][1];
     }
+}
+
+void OneQubitGate::printMatrix() const
+{
+    std::stringstream ss;
+    ss << std::setprecision(3) << std::fixed;
+    for (int i = 0; i < SIZE; i++)
+    {
+        ss << "[ ";
+        for (int j = 0; j < SIZE; j++)
+        {
+            ss << fullMatrix[i][j].toString() << " ";
+        }
+        ss << "]" << std::endl;
+    }
+
+    std::cout << ss.str() << std::endl;
 }
 #endif
